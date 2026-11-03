@@ -523,6 +523,153 @@
         </script>
       </section>
 
+<section class="guestbook" id="guestbook">
+  <div class="section-heading">
+    <span>03 //</span>
+    <h2>BLACK JOHN'S GUESTBOOK</h2>
+    <span class="small-note">TRANSMISSIONS FROM THE READERS</span>
+  </div>
+
+  <p class="comments-intro">
+    Leave a message in the archive. No account required.
+  </p>
+
+  <form id="guestbook-form">
+    <label for="guest-name">NICKNAME (OPTIONAL)</label>
+    <input id="guest-name" maxlength="30"
+      placeholder="Anonymous visitor">
+
+    <label for="guest-chapter">CHAPTER</label>
+    <select id="guest-chapter">
+      <option>Whole Book</option>
+      <option>Chapter 01</option>
+      <option>Chapter 02</option>
+      <option>Chapter 03</option>
+      <option>Chapter 04</option>
+      <option>Chapter 05</option>
+      <option>Chapter 06</option>
+      <option>Chapter 07</option>
+      <option>Chapter 08</option>
+    </select>
+
+    <label for="guest-message">YOUR MESSAGE</label>
+    <textarea id="guest-message" maxlength="1000"
+      required placeholder="Write your transmission..."></textarea>
+
+    <input type="text" id="guest-website"
+      name="website" autocomplete="off"
+      tabindex="-1" style="display:none">
+
+    <div class="cf-turnstile"
+      data-sitekey="0x4AAAAAAFyMTF5BAgJ_i36elk8KyCjrZ-o"
+      data-callback="guestbookVerified"
+      data-expired-callback="guestbookExpired">
+    </div>
+
+    <button type="submit" id="guest-submit">
+      TRANSMIT MESSAGE →
+    </button>
+
+    <p id="guest-status" aria-live="polite"></p>
+  </form>
+
+  <div id="guestbook-messages">
+    LOADING TRANSMISSIONS...
+  </div>
+</section>
+
+<script>
+let guestbookToken = "";
+
+function guestbookVerified(token) {
+  guestbookToken = token;
+}
+
+function guestbookExpired() {
+  guestbookToken = "";
+}
+
+const guestAPI =
+  "https://black-john-guestbook.tirkeyarmaan69.workers.dev/comments";
+
+async function loadGuestbook() {
+  const wall = document.getElementById("guestbook-messages");
+
+  try {
+    const response = await fetch(guestAPI);
+    if (!response.ok) throw new Error();
+
+    const data = await response.json();
+    wall.replaceChildren();
+
+    if (!data.comments.length) {
+      wall.textContent = "NO APPROVED TRANSMISSIONS YET.";
+      return;
+    }
+
+    data.comments.forEach(comment => {
+      const card = document.createElement("article");
+      const heading = document.createElement("strong");
+      const chapter = document.createElement("small");
+      const message = document.createElement("p");
+
+      heading.textContent = comment.nickname;
+      chapter.textContent = comment.chapter;
+      message.textContent = comment.message;
+
+      card.append(heading, chapter, message);
+      wall.appendChild(card);
+    });
+  } catch {
+    wall.textContent = "COULD NOT LOAD TRANSMISSIONS.";
+  }
+}
+
+document.getElementById("guestbook-form")
+  .addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const status = document.getElementById("guest-status");
+
+    if (!guestbookToken) {
+      status.textContent = "Please complete the security check.";
+      return;
+    }
+
+    status.textContent = "TRANSMITTING...";
+
+    try {
+      const response = await fetch(guestAPI, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nickname: document.getElementById("guest-name").value,
+          chapter: document.getElementById("guest-chapter").value,
+          message: document.getElementById("guest-message").value,
+          website: document.getElementById("guest-website").value,
+          turnstileToken: guestbookToken
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.error);
+
+      status.textContent = "MESSAGE RECEIVED! AWAITING APPROVAL.";
+      event.target.reset();
+      guestbookToken = "";
+      if (window.turnstile) turnstile.reset();
+    } catch (error) {
+      status.textContent = error.message || "TRANSMISSION FAILED.";
+    }
+  });
+
+loadGuestbook();
+</script>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async defer></script>
+          
       <section class="arc-end">
         <div class="panel-label">ARC 01 COMPLETE</div>
         <h2>THE EX-GIRLFRIEND INCIDENT</h2>
