@@ -1,1 +1,233 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a2d">
+  <title>Chapter 02 — The Investigation Department Has No Qualifications | Black John</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #061525;
+      color: #dceaf2;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.8;
+    }
+
+    .page {
+      width: min(100% - 32px, 760px);
+      margin: auto;
+      padding: 28px 0 50px;
+    }
+
+    .topbar {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #63d9ed;
+      border-bottom: 1px solid #16445b;
+      padding-bottom: 14px;
+    }
+
+    a {
+      color: #70dff2;
+      text-decoration: none;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .chapter-label {
+      color: #61d8ed;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      color: #f0f8ff;
+      font-size: clamp(30px, 7vw, 44px);
+      line-height: 1.2;
+      margin: 14px 0;
+    }
+
+    .author {
+      color: #91aebb;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+
+    .story {
+      background: #0b2033;
+      border: 1px solid #17445b;
+      border-radius: 12px;
+      padding: clamp(18px, 5vw, 38px);
+      box-shadow: 0 0 24px #00101d;
+    }
+
+    .location {
+      color: #70dff2;
+      font-style: italic;
+    }
+
+    .dialogue {
+      color: #e0f2fa;
+      margin: 13px 0;
+    }
+
+    .scene-heading {
+      color: #71dff1;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 34px;
+      border-bottom: 1px solid #17445b;
+      padding-bottom: 8px;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .navigation a {
+      border: 1px solid #24617a;
+      border-radius: 7px;
+      padding: 10px 14px;
+    }
+
+    footer {
+      text-align: center;
+      color: #718c9c;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="topbar">
+    BLACK JOHN'S INTERNET CORNER · ARCHIVE ONLINE
+  </div>
+
+  <a class="back" href="../index.html#archive">
+    ← BACK TO THE ARCHIVE
+  </a>
+
+  <header>
+    <div class="chapter-label">ARC 01 / CHAPTER 02</div>
+    <h1>The Investigation Department Has No Qualifications</h1>
+    <div class="author">WRITTEN BY BLACK JOHN</div>
+  </header>
+
+  <main class="story">
+
+    <p class="location">Location: Arman's meeting spot.</p>
+
+    <p>Arman is waiting for Johnny.</p>
+
+    <p class="dialogue">Johnny: "So what's the emergency?"</p>
+
+    <p class="dialogue">Arman: "What emergency?"</p>
+
+    <p class="dialogue">Johnny: "Ranveer called me like the government was about to collapse."</p>
+
+    <p class="dialogue">Arman: "I just asked him to call you."</p>
+
+    <p class="dialogue">Johnny: "Never outsource communication to that man again."</p>
+
+    <p class="dialogue">Arman: "Anyway, how did it go with Divya?"</p>
+
+    <p class="dialogue">Johnny: "She's still Divya."</p>
+
+    <p class="dialogue">Arman: "That explains nothing."</p>
+
+    <p class="dialogue">Johnny: "Exactly."</p>
+
+    <p>Arman asks about the conversation.</p>
+
+    <p class="dialogue">Arman: "Did you find out why she and Kajal became friends?"</p>
+
+    <p class="dialogue">Johnny: "Apparently, people change."</p>
+
+    <p class="dialogue">Arman: "That's it?"</p>
+
+    <p class="dialogue">Johnny: "She also called me a creep."</p>
+
+    <p class="dialogue">Arman: "Well, that's not new information."</p>
+
+    <h2 class="scene-heading">The investigation</h2>
+
+    <p class="dialogue">Johnny: "Something doesn't add up."</p>
+
+    <p class="dialogue">Arman: "Or maybe there's nothing to add up."</p>
+
+    <p class="dialogue">Johnny: "Two people who couldn't stand each other suddenly becoming best friends? That's suspicious."</p>
+
+    <p class="dialogue">Arman: "Maybe they bonded."</p>
+
+    <p class="dialogue">Johnny: "Over what?"</p>
+
+    <p class="dialogue">Arman: "I don't know. Friendship?"</p>
+
+    <p class="dialogue">Johnny: "You're not helping."</p>
+
+    <p class="dialogue">Arman: "I wasn't aware I was being paid."</p>
+
+    <p>Johnny looks at him.</p>
+
+    <p class="dialogue">Johnny: "You will be compensated with my appreciation."</p>
+
+    <p class="dialogue">Arman: "Keep it."</p>
+
+    <h2 class="scene-heading">Meanwhile...</h2>
+
+    <p>Divya and Kajal are seen together.</p>
+
+    <p>They seem perfectly comfortable around each other.</p>
+
+    <p>Johnny notices them.</p>
+
+    <p class="dialogue">Johnny: "There they are."</p>
+
+    <p class="dialogue">Arman: "They're just talking."</p>
+
+    <p class="dialogue">Johnny: "Exactly. Suspicious."</p>
+
+    <p class="dialogue">Arman: "You're making me regret coming here."</p>
+
+    <p class="dialogue">Johnny: "Friendship is a strange phenomenon."</p>
+
+    <p class="dialogue">Arman: "So is your brain."</p>
+
+  </main>
+
+  <nav class="navigation">
+    <a href="chapter-01.html">← PREVIOUS CHAPTER</a>
+    <a href="chapter-03.html">NEXT CHAPTER →</a>
+  </nav>
+
+  <footer>
+    © 2026 BLACK JOHN · ALL RIGHTS RESERVED
+  </footer>
+
+</div>
+</body>
+</html>
